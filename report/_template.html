@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDIT: イベント名（タブのタイトルやブックマーク、SNSシェア時に表示される） -->
+    <title>イベント名を入れる | GDGoC KIT</title>
+
+    <!--
+  ============================================================
+  GDGoC KIT イベントレポート テンプレート
+  ============================================================
+  使い方:
+  1. このファイルを report/YYYYMMDD.html としてコピーする
+     （YYYYMMDD はイベントの実施日）
+  2. "EDIT: ..." のコメントがある箇所を書き換える
+    3. セッションのブロックは <div class="session"> ごとコピーして増減させる
+        （4色が自動で順番にまわるので、色は気にせず追加してOK）
+        4. 画像は assets/images/YYYYMMDD/ に置いて、相対パスで参照する
+        5. 「関連リンク」に、参加者・登壇者が書いたnote/ブログ/SNS投稿へのリンクを追加する
+        （無ければ <ul class="related-links"> の中身を空にしてセクションごと削除してもよい）
+            6. セクション（h2）を増減した場合は、ヒーロー直下の <nav class="toc"> の
+                リンクも合わせて増減する（href="#セクションのid" を一致させる）
+                7. 書き終えたら report/index.html にカードを追加する
+
+                スタイルは共通CSS（assets/css/）を読み込んでいるので、
+                このファイル自体は編集しなくてもデザインが崩れない。
+                デザインを変えたいときは assets/css/base.css（全ページ共通）
+                または assets/css/report.css（レポートページ専用）を編集する。
+                ============================================================
+                -->
+
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+                    rel="stylesheet">
+                <link rel="stylesheet" href="../assets/css/base.css">
+                <link rel="stylesheet" href="../assets/css/report.css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!-- チャプターバー：GDGの実際のシンボルである4色ドットを再現 -->
+        <div class="chapter-bar">
+            <div class="gdg-dots"><span></span><span></span><span></span><span></span></div>
+            <span class="name">GDGoC <b>KIT</b></span>
+        </div>
+
+        <header class="hero">
+            <p class="eyebrow">EVENT REPORT</p>
+
+            <!-- EDIT: イベント名 -->
+            <h1>イベント名</h1>
+
+            <div class="sub-meta">
+                <span>実施日: 2026年4月21日</span>
+                <span>公開日: 2026年4月27日</span>
+                <span>現地参加者数: 30名以上</span>
+            </div>
+
+            <!-- EDIT: アイキャッチ画像。無ければこのfigureごと削除してよい -->
+            <figure>
+                <img src="../assets/images/20260421/hero.jpg" alt="イベントの様子">
+                <figcaption>キャプションを入れる ©GDGoC KIT</figcaption>
+            </figure>
+        </header>
+
+        <!-- 目次：各セクションへのアンカーリンク。スクロールで現在地がハイライトされる -->
+        <!-- EDIT: セクションを増減した場合はここのリンクも合わせて増減する -->
+        <nav class="toc" aria-label="目次">
+            <a href="#intro">はじめに</a>
+            <a href="#sessions">セッション</a>
+            <a href="#closing">おまけ</a>
+            <a href="#related">関連リンク</a>
+            <a href="#event-info">本イベントについて</a>
+        </nav>
+
+        <!-- ================= はじめに ================= -->
+        <section id="intro">
+            <h2>はじめに</h2>
+            <!-- EDIT: イベント概要・対象者・参加人数・connpassリンクなど -->
+            <p>
+                2026年4月21日に開催されたイベント「イベント名」のレポートです。
+                今回のイベントの対象や狙い、実施の背景などをここに書きます。
+            </p>
+            <p>
+                イベント詳細: <a href="https://connpass.com/">connpassのイベントページ（外部リンク）</a>
+            </p>
+        </section>
+
+        <!-- ================= セッション ================= -->
+        <section id="sessions">
+            <h2>セッション</h2>
+
+            <div class="sessions">
+
+                <!-- EDIT: セッションごとにこのdivをコピーして増やす（色は自動でまわる） -->
+                <div class="session">
+                    <p class="session-num">SESSION 01</p>
+                    <h3>セッションタイトルを入れる</h3>
+                    <p class="speaker">登壇者: 氏名（GDGoC KIT メンバー / 金沢工業大学 ○○学部 ○年）</p>
+                    <p>
+                        セッションの内容をここに書きます。登壇資料へのリンクがあれば末尾の「登壇資料」欄にまとめて記載してください。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">SESSION 02</p>
+                    <h3>セッションタイトルを入れる</h3>
+                    <p class="speaker">登壇者: 氏名（金沢工業大学 ○○学部 ○年）</p>
+                    <p>
+                        セッションの内容をここに書きます。
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= おまけ（任意） ================= -->
+        <section id="closing">
+            <h2>おまけ</h2>
+            <div class="closing-quote">
+                <p class="quote">"Done is better than perfect."</p>
+                <p class="attribution">— Mark Zuckerberg</p>
+            </div>
+        </section>
+
+        <!-- ================= 関連リンク ================= -->
+        <section id="related">
+            <h2>関連リンク</h2>
+            <!-- EDIT: 参加者・登壇者が書いた個人のnote/ブログ/SNS投稿などをここに追加する -->
+            <ul class="related-links">
+                <li>
+                    <a href="https://note.com/xxxxx/n/xxxxxxxxxxxx" target="_blank" rel="noopener">
+                        <span class="rl-text">
+                            <span class="rl-title">参加者によるレポートタイトルを入れる</span>
+                            <span class="rl-source">note ・ 執筆者名</span>
+                        </span>
+                        <span class="rl-arrow">→</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/xxxxx/status/xxxxxxxxxxxx" target="_blank" rel="noopener">
+                        <span class="rl-text">
+                            <span class="rl-title">当日の様子をまとめたポストなど</span>
+                            <span class="rl-source">X（旧Twitter） ・ 投稿者名</span>
+                        </span>
+                        <span class="rl-arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================= 本イベントについて ================= -->
+        <footer class="event-info" id="event-info">
+            <h2>本イベントについて</h2>
+            <dl class="info-grid">
+                <dt>主催団体</dt>
+                <dd>GDGoC KIT / GDG on Campus Kanazawa Institute of Technology</dd>
+
+                <dt>公式X</dt>
+                <dd><a href="https://x.com/kit_gdsc">@kit_gdsc</a></dd>
+
+                <dt>公式サイト</dt>
+                <dd><a href="https://gdg.community.dev/gdg-on-campus-kanazawa-institute-of-technology-ishikawa-japan/">GDG
+                        on Campus KIT（gdg.community.dev）</a></dd>
+
+                <dt>イベント詳細</dt>
+                <dd><a href="https://connpass.com/">connpassのイベントページ（外部リンク）</a></dd>
+
+                <dt>会場</dt>
+                <dd>会場名を入れる</dd>
+
+                <dt>登壇資料</dt>
+                <dd>
+                    <!-- EDIT: 登壇資料があれば列挙する -->
+                    LT① <a href="#">Speaker Deck</a><br>
+                    LT② <a href="#">Speaker Deck</a>
+                </dd>
+            </dl>
+
+            <div class="tags">
+                <!-- EDIT: ハッシュタグを追加・削除する -->
+                <a href="#">#gdgoc</a>
+                <a href="#">#gdgockit</a>
+                <a href="#">#金沢工業大学</a>
+                <a href="#">#イベントレポート</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // 目次(TOC)のスクロール連動ハイライト
+        (function () {
+            // ハッシュリンク（#から始まるもの）だけを対象にする。
+            // 通常のURL（https://... など）が紛れていても querySelector に渡してエラーにならないようにする。
+            var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'))
+                .filter(function (a) {
+                    var href = a.getAttribute('href') || '';
+                    return href.charAt(0) === '#' && href.length > 1;
+                });
+            var sections = links.map(function (a) {
+                return document.querySelector(a.getAttribute('href'));
+            });
+            // 「TOCのすぐ下のライン」を、どのセクションの見出しが最後に通過したかで
+            // アクティブなセクションを判定する。
+            // （画面中央の帯との交差判定だと、「はじめに」のように中身が短いセクションが
+            //   一度も帯に重ならないまま通り過ぎてしまい、正しく判定できないため）
+            //
+            // 基準線の値は report.css の scroll-margin-top と揃えておくこと。
+            // ここがズレていると、リンククリックで着地した直後に「まだ基準線を
+            // 通過していない」と判定され、ハイライトが一切更新されなくなる。
+            var SCROLL_OFFSET = 88; // report.css の section[id] / footer[id] の scroll-margin-top と同じ値
+
+            function updateActive() {
+                var refY = SCROLL_OFFSET + 8;
+                var activeIndex = -1;
+                for (var i = 0; i < sections.length; i++) {
+                    var el = sections[i];
+                    if (!el) continue;
+                    if (el.getBoundingClientRect().top <= refY) activeIndex = i;
+                }
+                // まだどのセクションにも到達していない（ヒーローを見ている）間は先頭を表示
+                if (activeIndex === -1) activeIndex = 0;
+
+                links.forEach(function (a) { a.classList.remove('active'); });
+                if (links[activeIndex]) links[activeIndex].classList.add('active');
+            }
+
+            var ticking = false;
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () {
+                    updateActive();
+                    ticking = false;
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateActive();
+        })();
+    </script>
+</body>
+
+</html>
