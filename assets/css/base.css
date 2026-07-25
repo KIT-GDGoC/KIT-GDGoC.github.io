@@ -1,0 +1,166 @@
+/* 全ページ共通（変数・リセット・チャプターバーなど）*/
+/* ============================================================
+   GDGoC KIT サイト共通ベーススタイル
+   ============================================================
+   全ページで読み込む共通の土台（変数・リセット・チャプターバーなど）。
+   ページ固有のスタイル（個別レポート／一覧ページなど）は
+   それぞれ report.css / report-list.css のような別ファイルに書く。
+   ============================================================ */
+
+:root {
+    /* GDGoC KIT の実サイト(theme-color)に合わせた Google 公式カラー */
+    --g-blue: #4285f4;
+    --g-red: #ea4335;
+    --g-yellow: #fbbc05;
+    --g-green: #34a853;
+
+    --bg: #f8f9fa;
+    /* Googleのマテリアル系サーフェス色 */
+    --card: #ffffff;
+    --ink: #202124;
+    /* Google の標準テキストグレー */
+    --ink-soft: #5f6368;
+    --rule: #e8eaed;
+
+    --font-display: "Manrope", "Noto Sans JP", sans-serif;
+    /* 数字・欧文の見出し */
+    --font-jp: "Noto Sans JP", sans-serif;
+    /* 日本語本文・見出し */
+    --font-mono: "Roboto Mono", monospace;
+
+    --radius: 16px;
+
+    /* ページごとの本文幅。各ページのCSSで上書きしてよい */
+    --measure: 720px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-jp);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--g-blue);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: #1a56c4;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+}
+
+/* ---------- 上部バー：チャプター名（gdg.community.devのヘッダー相当） ---------- */
+.chapter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+/* GDGの実際のシンボルである「4色ドット」を再現 */
+.gdg-dots {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+
+.gdg-dots span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.gdg-dots span:nth-child(1) {
+    background: var(--g-blue);
+    top: 0;
+    left: 6px;
+}
+
+.gdg-dots span:nth-child(2) {
+    background: var(--g-red);
+    top: 6px;
+    left: 12px;
+}
+
+.gdg-dots span:nth-child(3) {
+    background: var(--g-yellow);
+    top: 12px;
+    left: 6px;
+}
+
+.gdg-dots span:nth-child(4) {
+    background: var(--g-green);
+    top: 6px;
+    left: 0;
+}
+
+.chapter-bar .name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+}
+
+.chapter-bar .name b {
+    color: var(--g-blue);
+}
+
+.chapter-bar .back {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+
+.chapter-bar .back:hover {
+    color: var(--g-blue);
+}
+
+/* ---------- ページ見出し共通（eyebrow + h1） ---------- */
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--g-blue);
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-family: var(--font-jp);
+    font-weight: 900;
+    font-size: clamp(24px, 3.6vw, 32px);
+    line-height: 1.5;
+    margin: 0 0 20px;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 480px) {
+    .wrap {
+        padding: 32px 16px 72px;
+    }
+}
