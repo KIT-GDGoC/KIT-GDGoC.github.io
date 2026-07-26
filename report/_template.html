@@ -7,6 +7,25 @@
     <!-- EDIT: イベント名（タブのタイトルやブックマーク、SNSシェア時に表示される） -->
     <title>イベント名を入れる | GDGoC KIT</title>
 
+    <!-- EDIT: 検索結果やSNSシェア時に表示される説明文（120字程度が目安） -->
+    <meta name="description" content="2026年4月21日に開催した「イベント名」のイベントレポートです。当日のセッション内容や参加者の様子をまとめています。">
+
+    <!-- EDIT: 検索されたいキーワードをカンマ区切りで（例: イベント名、開催日、登壇者名など） -->
+    <meta name="keywords" content="GDGoC KIT, GDG on Campus, 金沢工業大学, イベントレポート, イベント名を入れる">
+
+    <!-- OGP: X（旧Twitter）やSlackなどでシェアされたときの表示。EDIT箇所は上のdescription/titleと揃えるとよい -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="GDGoC KIT">
+    <meta property="og:title" content="イベント名を入れる | GDGoC KIT">
+    <meta property="og:description" content="2026年4月21日に開催した「イベント名」のイベントレポートです。当日のセッション内容や参加者の様子をまとめています。">
+    <!-- EDIT: 公開後のURLと、アイキャッチ画像の絶対URLに差し替える -->
+    <meta property="og:url" content="https://kit-gdgoc.github.io/report/20260421.html">
+    <meta property="og:image" content="https://kit-gdgoc.github.io/assets/images/20260421/hero.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kit_gdsc">
+
     <!--
   ============================================================
   GDGoC KIT イベントレポート テンプレート
@@ -15,37 +34,50 @@
   1. このファイルを report/YYYYMMDD.html としてコピーする
      （YYYYMMDD はイベントの実施日）
   2. "EDIT: ..." のコメントがある箇所を書き換える
-    3. セッションのブロックは <div class="session"> ごとコピーして増減させる
-        （4色が自動で順番にまわるので、色は気にせず追加してOK）
-        4. 画像は assets/images/YYYYMMDD/ に置いて、相対パスで参照する
-        5. 「関連リンク」に、参加者・登壇者が書いたnote/ブログ/SNS投稿へのリンクを追加する
-        （無ければ <ul class="related-links"> の中身を空にしてセクションごと削除してもよい）
-            6. セクション（h2）を増減した場合は、ヒーロー直下の <nav class="toc"> の
-                リンクも合わせて増減する（href="#セクションのid" を一致させる）
-                7. 書き終えたら report/index.html にカードを追加する
+    （<title>・description・keywords・OGPタグも含む。検索結果やSNSシェア時の
+        見え方に関わるので、コピー直後にまとめて書き換えておくとよい）
+        3. セッションのブロックは <div class="session"> ごとコピーして増減させる
+            （4色が自動で順番にまわるので、色は気にせず追加してOK）
+            ・画像を入れる場合は <figure>
+                <div class="img-placeholder">[画像]</div>...
+            </figure> を
+            見出しの下・本文の上に置く（実画像ができたらimg-placeholderを<img>に差し替える）
+            ・connpassなどの紹介文をそのまま引用したい場合は <blockquote> と
+                <p class="attribution">を使う（SESSION 02の例を参照）
+                    ・ハンズオンなど内容が長いセッションは
+                <h4> で小見出しを区切ると読みやすい
+                    （HANDS-ONの例を参照）
+                    4. 画像は assets/images/YYYYMMDD/ に置いて、相対パスで参照する
+                    5. 「関連リンク」に、参加者・登壇者が書いたnote/ブログ/SNS投稿へのリンクを追加する
+                    （無ければ <ul class="related-links"> の中身を空にしてセクションごと削除してもよい）
+                        6. セクション（h2）を増減した場合は、ヒーロー直下の <nav class="toc"> の
+                            リンクも合わせて増減する（href="#セクションのid" を一致させる）
+                            7. 書き終えたら report/index.html にカードを追加する
 
-                スタイルは共通CSS（assets/css/）を読み込んでいるので、
-                このファイル自体は編集しなくてもデザインが崩れない。
-                デザインを変えたいときは assets/css/base.css（全ページ共通）
-                または assets/css/report.css（レポートページ専用）を編集する。
-                ============================================================
-                -->
+                            スタイルは共通CSS（assets/css/）を読み込んでいるので、
+                            このファイル自体は編集しなくてもデザインが崩れない。
+                            デザインを変えたいときは assets/css/base.css（全ページ共通）
+                            または assets/css/report.css（レポートページ専用）を編集する。
+                            ============================================================
+                            -->
 
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
-                    rel="stylesheet">
-                <link rel="stylesheet" href="../assets/css/base.css">
-                <link rel="stylesheet" href="../assets/css/report.css">
+                            <link rel="preconnect" href="https://fonts.googleapis.com">
+                            <link
+                                href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+                                rel="stylesheet">
+                            <link rel="stylesheet" href="../assets/css/base.css">
+                            <link rel="stylesheet" href="../assets/css/report.css">
 </head>
 
 <body>
     <div class="wrap">
 
-        <!-- チャプターバー：GDGの実際のシンボルである4色ドットを再現 -->
+        <!-- チャプターバー：GDGoC KIT のブランドロゴ画像（クリックでレポート一覧へ） -->
+        <!-- EDIT: assets/images/branding/ に画像を配置したら、下のsrcを実際のファイル名に差し替える -->
         <div class="chapter-bar">
-            <div class="gdg-dots"><span></span><span></span><span></span><span></span></div>
-            <span class="name">GDGoC <b>KIT</b></span>
+            <a class="logo-link" href="index.html" aria-label="レポート一覧へ戻る">
+                <img class="logo" src="../assets/images/branding/logo.png" alt="GDGoC KIT">
+            </a>
         </div>
 
         <header class="hero">
@@ -97,21 +129,50 @@
             <div class="sessions">
 
                 <!-- EDIT: セッションごとにこのdivをコピーして増やす（色は自動でまわる） -->
+                <!-- 画像を入れる場合は、figureをこのように見出しの下・本文の上に置く -->
                 <div class="session">
                     <p class="session-num">SESSION 01</p>
                     <h3>セッションタイトルを入れる</h3>
                     <p class="speaker">登壇者: 氏名（GDGoC KIT メンバー / 金沢工業大学 ○○学部 ○年）</p>
+                    <!-- EDIT: 画像が無ければこのfigureごと削除してよい -->
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>キャプションを入れる</figcaption>
+                    </figure>
                     <p>
                         セッションの内容をここに書きます。登壇資料へのリンクがあれば末尾の「登壇資料」欄にまとめて記載してください。
                     </p>
                 </div>
 
+                <!-- connpassなどの紹介文をそのまま引用したい場合は、blockquoteを使う -->
                 <div class="session">
                     <p class="session-num">SESSION 02</p>
                     <h3>セッションタイトルを入れる</h3>
                     <p class="speaker">登壇者: 氏名（金沢工業大学 ○○学部 ○年）</p>
                     <p>
+                        セッションの紹介文をここに書きます。
+                    </p>
+                    <blockquote>
+                        <p>connpassなどに書かれた紹介文をそのまま引用する場合はここに入れる。</p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
                         セッションの内容をここに書きます。
+                    </p>
+                </div>
+
+                <!-- ハンズオンなど内容が長いセッションは、h4で小見出しを区切ると読みやすい -->
+                <div class="session">
+                    <p class="session-num">HANDS-ON</p>
+                    <h3>セッションタイトルを入れる</h3>
+                    <p class="speaker">担当: 氏名（GDGoC KIT メンバー / 金沢工業大学 ○○学部 ○年）</p>
+                    <p>
+                        ハンズオン全体の概要をここに書きます。
+                    </p>
+
+                    <h4>小見出しを入れる</h4>
+                    <p>
+                        小見出しに対応する内容をここに書きます。手順を書く場合は改行（&lt;br&gt;）で箇条書き風にしてもよい。
                     </p>
                 </div>
 
