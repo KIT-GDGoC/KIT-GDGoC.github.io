@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIT Welcome Event 2026 ～エンジニアのはじめかた × Cloud体験～ | GDGoC KIT</title>
+
+    <meta name="description"
+        content="2026年4月21日に開催した「KIT Welcome Event 2026」のイベントレポートです。個人開発・チーム開発・UI/UXなどのLT発表と、Google Cloud Shellを使ったハンズオンの様子をまとめています。">
+    <meta name="keywords" content="GDGoC KIT, GDG on Campus, 金沢工業大学, イベントレポート, KIT Welcome Event, Cloud Shell, ハンズオン">
+
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="GDGoC KIT">
+    <meta property="og:title" content="KIT Welcome Event 2026 ～エンジニアのはじめかた × Cloud体験～ | GDGoC KIT">
+    <meta property="og:description"
+        content="2026年4月21日に開催した「KIT Welcome Event 2026」のイベントレポートです。個人開発・チーム開発・UI/UXなどのLT発表と、Google Cloud Shellを使ったハンズオンの様子をまとめています。">
+    <!-- EDIT: アイキャッチ画像を用意したら og:image に絶対URLを設定する -->
+    <meta property="og:url" content="https://kit-gdgoc.github.io/report/20260421.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kit_gdsc">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/report.css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="chapter-bar">
+            <a class="logo-link" href="index.html" aria-label="レポート一覧へ戻る">
+                <img class="logo" src="../assets/images/branding/logo.png" alt="GDGoC KIT">
+            </a>
+        </div>
+
+        <header class="hero">
+            <p class="eyebrow">EVENT REPORT</p>
+
+            <h1>KIT Welcome Event 2026 ～エンジニアのはじめかた × Cloud体験～</h1>
+
+            <div class="sub-meta">
+                <span>実施日: 2026年4月21日</span>
+                <span>公開日: 2026年4月27日</span>
+                <span>現地参加者数: 30名以上</span>
+            </div>
+
+            <figure>
+                <div class="img-placeholder">[画像]</div>
+                <figcaption>単独イベント「KIT Welcome Event」の簡易スライドの一部 ©GDGoC KIT</figcaption>
+            </figure>
+        </header>
+
+        <nav class="toc" aria-label="目次">
+            <a href="#intro">はじめに</a>
+            <a href="#sessions">セッション</a>
+            <a href="#closing">おまけ</a>
+            <a href="#related">関連リンク</a>
+            <a href="#event-info">本イベントについて</a>
+        </nav>
+
+        <!-- ================= はじめに ================= -->
+        <section id="intro">
+            <h2>はじめに</h2>
+            <p>
+                2026/04/21 に開催されたイベント「KIT Welcome Event 2026」のレポートです。
+            </p>
+            <p>
+                今回のイベントを実施するにあたって、私たちがターゲットとした層として、大学に入りたての学部１年生、まだ技術に触れたことのない、興味のある学部２年生が当てはまります。
+            </p>
+            <p>
+                複数プロジェクト（※１）や委員会、その他課外活動に参加している学生や、エンジニアとして活動している学生視点での「個人開発関連」や「UI/UXデザイン」についてのLT発表に加え、Google 提供の
+                CloudShell を用いたハンズオンを実施しました。
+            </p>
+            <p>
+                イベント詳細: <a href="https://gdsckit.connpass.com/event/389736/" target="_blank"
+                    rel="noopener">connpassのイベントページ（外部リンク）</a>
+            </p>
+
+            <figure>
+                <div class="img-placeholder">[画像]</div>
+                <figcaption>イベントのタイムスケジュール © GDGoC KIT</figcaption>
+            </figure>
+        </section>
+
+        <!-- ================= セッション ================= -->
+        <section id="sessions">
+            <h2>セッション</h2>
+
+            <div class="sessions">
+
+                <div class="session">
+                    <p class="session-num">OPENING</p>
+                    <h3>オープニングセッション</h3>
+                    <p class="speaker">登壇者: 須藤拓海（GDGoC KIT メンバー / 金沢工業大学 工学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>オープニングセッションの様子</figcaption>
+                    </figure>
+                    <p>
+                        初めに、GDGoC KIT
+                        メンバーの須藤拓海によるオープニングがおこなわれました。このイベントを初登壇とする学生がいることもあり、イベントのタイムスケジュールや参加者向けの丁寧な案内を重視したセッションになっていました。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 01</p>
+                    <h3>①GDGoCってどんなところ？</h3>
+                    <p class="speaker">登壇者: 平田陸翔（GDGoC KIT オーガナイザー / 金沢工業大学 工学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>「LTセッション①GDGoCとは？」進行中の様子</figcaption>
+                    </figure>
+                    <p>
+                        初めのLTセッションは本イベントのオーナーであり、GDGoC KIT オーガナイザーの平田から始まりました。<br>
+                        「エンジニアと言えばプログラミングが得意な人が多いイメージもありますが、文系大学でも、このGDGoC グループが作られているんです！」と、技術意識の不安解消のもと、私たちGDGoC
+                        がどのような活動をしているのかなどを、GDGoC KIT の過去の実績とともに紹介しました。
+                    </p>
+                    <p>
+                        興味を持たれた場合、こちらの記事が分かりやすくまとまっているのでご覧ください！
+                    </p>
+                    <blockquote>
+                        <p><a href="https://qiita.com/Yu-HaruWolf/items/d2f19447704703972a06" target="_blank"
+                                rel="noopener">Google Developer Groups on Campusって何？ - Qiita</a></p>
+                    </blockquote>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 02</p>
+                    <h3>②自分の「めんどくさい」を解決しよう！ 〜初めての個人開発〜</h3>
+                    <p class="speaker">登壇者: 久米蒼輝（金沢工業大学 工学部 4年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>LTセッション②自分の「めんどくさい」を解決しよう！～初めての個人開発～</figcaption>
+                    </figure>
+                    <p>
+                        LTセッション2人目は、家で好きな作品を4D体験で楽しめるシステム「4D@HOME」の関係者、久米さんに登壇いただきました！
+                    </p>
+                    <blockquote>
+                        <p>
+                            「何から作ればいいかわからない…」と迷っていませんか？ 私からは、「自分のためのモノづくり」から始める個人開発についてお話しします。
+                            学内サイトの改善や学祭の屋台のアプリなど、私が「自分のために」作った実例をご紹介。 すごいアプリじゃなくてOK。自分の不便が解決できれば大成功です。
+                            私が好き勝手に楽しんでいるモノづくりの話から、 皆さんの「最初の一歩」のヒントになるものを、自由に受け取って帰ってください！
+                        </p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
+                        個人開発の初心者によくある「あと一歩」。この壁が高く感じる人に対してどのようなアプローチをしたら気軽に開発することができるか、などを発表しました。<br>
+                        「身近な ” めんどくさい ” を探す」、「個人開発は決してリリースを大前提としたものではなくてもいい」。SNS
+                        上では、個人開発者がアプリストアを通してリリースしている姿が多くみられる一方で、学生が使用する学内専用サイトの使いやすさを向上させる拡張機能を作るなど、より身近に、よりハードルを下げて開発することができるようなススメを教えてくださりました。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 03</p>
+                    <h3>③友達と作ればもっと楽しい！ 〜 初めてのチーム開発とGit / GitHub 〜</h3>
+                    <p class="speaker">登壇者: 菅谷煌稀（金沢工業大学 工学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>LTセッション③友達と作ればもっと楽しい！～ 初めてのチーム開発とGit / GitHub ～</figcaption>
+                    </figure>
+                    <p>
+                        LT前半もラストひとり！<br>
+                        続いては、プロジェクトや教職課程にも所属している菅谷さん。
+                    </p>
+                    <blockquote>
+                        <p>
+                            「一人で全部作るのは大変そう...」そう思っている人にこそ聞いて欲しいのがチーム開発です。プログラミング未経験の方に向けて、チームで開発するメリットと、スムーズに進めるためのポイントを解説します。後半は、チーム開発に欠かせない定番ツール『Git/GitHub』について紹介します。
+                        </p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
+                        ここでは、先ほどの個人開発とは似て非なるであろう「チーム開発」を中心に発表していきました。<br>
+                        個人開発とは異なり、数人でひとつのプロダクトを作る「チーム開発」。<br>
+                        自身の経験をもとに、チーム開発の楽しさや難しさなどを紹介しました。
+                    </p>
+                    <p>
+                        最後には、菅谷さん自身が過去にやらかした、とても思い出に残るようなミスをしたことを紹介し、「適切なチーム開発によって、このようなミスも防ぐことができるようになる」と教えてくれました。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 04</p>
+                    <h3>④開発・制作におけるUI/UXの必要性についてUI/UXってなんだろう</h3>
+                    <p class="speaker">登壇者: 山田桜（金沢工業大学 情報フロンティア学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>LTセッション④開発・制作におけるUI/UXの必要性についてUI/UXってなんだろう</figcaption>
+                    </figure>
+                    <p>
+                        さて、LTセッション後半に移りました。<br>
+                        後半１人目は、学内の課外活動でプロダクトマネージャー兼デザイナーとして活動している山田さん。
+                    </p>
+                    <blockquote>
+                        <p>
+                            UI/UXデザインってよく聞くけど何？ 開発や制作とどんな関係があるの？ UI/UXの設計の有無で何が変わるの？
+                        </p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
+                        「 UI / UX って、よく聞く言葉だけどなに？」「これって何が重要なの？」これらの悩みを解決してくれる、このセッション。
+                    </p>
+                    <p>
+                        本学にはメディア情報（学位：学士 / 情報学）学科と、情報工学科（学位：学士 /
+                        工学）のほか、複数の学科が集まっており、山田さんが在籍するメディア情報学科は主に視覚・聴覚に関する分野のほか、ゲーム制作（3D等）に関する授業を持つ学科であり、私たち情報工学科とは異なる視点での内容となりました。
+                    </p>
+                    <p>
+                        「UI と UX
+                        、聞いたことはあるけど、あまりイメージが付かない、、そんな人もいると思います。」言葉は聞いたことがあるのに、頭では理解が追い付かない、どの範囲がどこに当てはまるのかがわからない、そんな悩みに対応したセッションでした。
+                    </p>
+                    <p>
+                        レポートの筆者としては「UI / UX
+                        は、エンジニアが考えるべき」とは考えておらず、デザイン設計を担当する人たちと、プログラミング設計を担当する人たちとの認識の差異を無くすための重要な「共通認識」であると考えており、この発表における、「どうして
+                        UI / UX が重要なのか」の部分がとても参考になったと感じています。
+                    </p>
+                    <p>
+                        新入生のみなさんにも、いつか「あの時先輩が言っていたことだ」と感じてもらえると、運営としても嬉しいです。
+                    </p>
+                    <p>
+                        さて、ここからは " エンジニア " とは少し異なるテーマでの発表となっています。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 05</p>
+                    <h3>⑤委員会と大学生活</h3>
+                    <p class="speaker">登壇者: 米山奈穂（金沢工業大学 情報フロンティア学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>LTセッション⑤委員会と大学生活</figcaption>
+                    </figure>
+                    <p>
+                        LT⑤は、委員会活動に注力している米山さんの発表です。
+                    </p>
+                    <blockquote>
+                        <p>委員会と大学生活の両立についてお話します。</p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
+                        エンジニアリングに関する内容が一通り終わった頃に感じることもある、「エンジニアのことについてはわかったけど、そんな余裕ってあるのかな。」という疑問についてお答えするセッションのうちの１つです。
+                    </p>
+                    <p>
+                        ここでは、委員会活動に所属してみて、どう感じているか、どのような過ごしてきたか。大変だったことはどういうことかなど、１年生視点になり、やさしく話してくれました。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">LT 06</p>
+                    <h3>⑥課外活動と大学生活について</h3>
+                    <p class="speaker">登壇者: 石井夢井（金沢工業大学 工学部 3年）</p>
+                    <figure>
+                        <div class="img-placeholder">[画像]</div>
+                        <figcaption>LT⑥大学生活とプロジェクトについて</figcaption>
+                    </figure>
+                    <p>
+                        さて、LTセッション最後の登壇者は、いくつかの課外活動に参加している石井さんです。<br>
+                        このセッションが終わると、次はハンズオンに移ることとなります。
+                    </p>
+                    <blockquote>
+                        <p>自分がこれまでおこなってきたプロジェクトの紹介と大学生活でどのように過ごしてきたかを発表します。</p>
+                        <p class="attribution">connpass 内紹介ページより引用</p>
+                    </blockquote>
+                    <p>
+                        オオトリとしての発表！<br>
+                        と言ってしまうと、本人にはプレッシャーしか与えないのでそんなことは言いません。なにしろLT①，LT②以外の登壇者は皆さんが初登壇だったりするので、むしろバックアップをする対象なのですから。
+                    </p>
+                    <p>
+                        さて、このLTのタイトルは「大学生活とプロジェクトについて」です。<br>
+                        「大学生活？それってLT⑤と内容がかぶるんじゃ …
+                        」いえ、そんなことはありません。むしろ、かぶらないようにするのではなく、本音本心から伝えてほしいという気持ちもあり登壇をお願いしていたので、むしろ「どこを主張したいか」、「他の人との共通点はどこか」といった感じで受け取ってもらうことができれば、LT⑤とLT⑥を実施した意味があったのではないでしょうか。少なからず執筆者である私はそう感じます。
+                    </p>
+                    <p>
+                        サークルのような課外活動のほか、委員会にも入っている石井さん。所属している課外活動で触っている「コード化点字ブロック」についての紹介や、それらに関するアプリ開発についてどのようなことを感じたかなどを発表していました。
+                    </p>
+                    <p>
+                        視覚障害をお持ちの方にとって有効であるとされ、導入事例が多々あるコード化点字ブロックのアプリ開発に携わる経験は、とても貴重になってきそうですね。頑張ってほしいです。
+                    </p>
+                </div>
+
+                <div class="session">
+                    <p class="session-num">HANDS-ON</p>
+                    <h3>実践！Cloud Shellハンズオン</h3>
+                    <p class="speaker">担当: 須藤拓海（GDGoC KIT メンバー / 金沢工業大学 工学部 3年）</p>
+                    <p>
+                        LTセッションが終わり、大急ぎで始まってしまったハンズオンセッション。<br>
+                        「とても時間が押してますね、これから長い説明が必要なのでしょうか」
+                    </p>
+                    <p>
+                        なんて、こんなことは言っていません。もちろん、イベントの質が落ちてしまうからというのもありますが、ハンズオンには参加者数に対して時間が盛大に取ってあったからなのです。
+                    </p>
+
+                    <h4>ハンズオンのながれ</h4>
+                    <p>
+                        ハンズオンのながれは以下の通りです、<br>
+                        １．ハンズオンの説明<br>
+                        ２．テンプレートの取得<br>
+                        ３．取得したリポジトリを自身のGitHub アカウントに紐づけ<br>
+                        ４．拡張機能「LiveSever」の導入<br>
+                        ５．自分なりに編集<br>
+                        ６．アップロード<br>
+                        ７．公開（したい人だけ）<br>
+                        ８．発表（運営を含む参加者の中からランダムで抽選）<br>
+                        ※ここでいう「アップロード」は開発者でいう「プッシュ」に当てはまります。
+                    </p>
+
+                    <h4>ハンズオンの説明</h4>
+                    <p>
+                        私たちは、ハンズオンをひとつのセッションとして扱っているため、十分な時間を組み込んでいます。
+                    </p>
+                    <p>
+                        そのため、説明にも時間をかけることができ、「ハンズオンとはなにか」から、「ハンズオンの目的」、「ハンズオンのながれとサポートについて」その他、イベント参加者へのお願いやハンズオン特有の連絡もおこないました。
+                    </p>
+
+                    <h4>テンプレートの取得</h4>
+                    <p>
+                        事前にGitHub アカウントの作成やDiscord サーバーへの参加、Google アカウント作成をお願いしていたので、その手順説明を省き、公開されているGitHub
+                        リポジトリからの取得・複製（クローン）から始まりました。
+                    </p>
+                    <p>
+                        その後はすべて、Discord サーバーに資料を共有しつつ、編集すべき内容や編集方法を示し、進めていきました。
+                    </p>
+
+                    <h4>発表！？</h4>
+                    <p>
+                        ランダムでの抽選、そして発表。<br>
+                        まさかの２年生と１年生が発表することに。
+                    </p>
+                    <p>
+                        とは言いつつ、私からすると、それが目当てでもあったりなかったり。。
+                    </p>
+                    <p>
+                        最初に４年の久米さんが発表してくださり、とてもハードルが上がっちゃいましたね。ランダムで当たった参加者の皆さんはとてもお疲れ様でした … … ！！
+                    </p>
+                    <p>
+                        ランダムの抽選で運営がひとつも発表しなかったうえに、参加者からの「発表して！」って声が上がったこともあり、ハンズオン担当の私も発表をおこないました。
+                    </p>
+                    <p>
+                        ※ちなみに、久米さんは対話型AI の機能を実装しており、参加者からは「おー」という歓喜と、「あはは … 笑」という（すごすぎる から来る）苦笑いが会場で響き渡りました。
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= おまけ ================= -->
+        <section id="closing">
+            <h2>おまけ</h2>
+            <p>
+                クロージングセッションとしては量が少なめの内容にはなりましたが、作ったものを共有してもらう時間と、次回イベントの予告などをして終了しました。
+            </p>
+
+            <div class="closing-quote">
+                <p class="quote">"Done is better than perfect."</p>
+                <p class="attribution">「完璧を目指すより、まずは実行しよう。」マーク・ザッカーバーグの発言です。</p>
+            </div>
+
+            <p>
+                ハンズオンやLT セッションでもあったように、簡単なモノ作りから体験することが大切だと思っています。
+            </p>
+            <p>
+                みなさんも、何かあれば実行してみるのはどうでしょうか？
+            </p>
+
+            <figure>
+                <div class="img-placeholder">[画像]</div>
+                <figcaption>全体写真 © GDGoC KIT</figcaption>
+            </figure>
+        </section>
+
+        <!-- ================= 関連リンク ================= -->
+        <section id="related">
+            <h2>関連リンク</h2>
+            <ul class="related-links">
+                <li>
+                    <a href="https://note.com/link_sudo/n/n7310d92824c0" target="_blank" rel="noopener">
+                        <span class="rl-text">
+                            <span class="rl-title">イベントレポート～GDGoCKIT 2026年４月イベント～</span>
+                            <span class="rl-source">note ・ sudo（すーどぅー）</span>
+                        </span>
+                        <span class="rl-arrow">→</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://qiita.com/Yu-HaruWolf/items/d2f19447704703972a06" target="_blank" rel="noopener">
+                        <span class="rl-text">
+                            <span class="rl-title">Google Developer Groups on Campusって何？</span>
+                            <span class="rl-source">Qiita ・ Yu-HaruWolf</span>
+                        </span>
+                        <span class="rl-arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================= 本イベントについて ================= -->
+        <footer class="event-info" id="event-info">
+            <h2>本イベントについて</h2>
+            <dl class="info-grid">
+                <dt>主催団体</dt>
+                <dd>GDGoC KIT / GDG on Campus Kanazawa Institute of Technology</dd>
+
+                <dt>公式X</dt>
+                <dd><a href="https://x.com/kit_gdsc">@kit_gdsc</a></dd>
+
+                <dt>公式サイト</dt>
+                <dd><a href="https://gdg.community.dev/gdg-on-campus-kanazawa-institute-of-technology-ishikawa-japan/">GDG
+                        on Campus KIT（gdg.community.dev）</a></dd>
+
+                <dt>イベント詳細</dt>
+                <dd><a href="https://gdsckit.connpass.com/event/389736/">KIT Welcome Event 2026（connpass）</a></dd>
+
+                <dt>会場</dt>
+                <dd>金沢工業大学 23号館 パフォーミングスタジオ</dd>
+
+                <dt>登壇資料</dt>
+                <dd>
+                    LT① <a href="https://speakerdeck.com/player/6b335d96c5ce406a9cddb787f7602d61" target="_blank"
+                        rel="noopener">Speaker Deck</a><br>
+                    LT② <a href="https://speakerdeck.com/player/e7ed7a86da5b4229a5b124550371f265" target="_blank"
+                        rel="noopener">Speaker Deck</a><br>
+                    LT③ <a href="https://speakerdeck.com/player/c3b11f579cef4b06913567e99ee62973" target="_blank"
+                        rel="noopener">Speaker Deck</a><br>
+                    LT④ <a href="https://speakerdeck.com/player/c29efdb421e649228943362c92302880" target="_blank"
+                        rel="noopener">Speaker Deck</a>
+                </dd>
+            </dl>
+
+            <div class="tags">
+                <a href="#">#gdgoc</a>
+                <a href="#">#gdgoc-kit</a>
+                <a href="#">#金沢工業大学</a>
+                <a href="#">#KIT</a>
+                <a href="#">#イベントレポート</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // 目次(TOC)のスクロール連動ハイライト
+        (function () {
+            // ハッシュリンク（#から始まるもの）だけを対象にする。
+            // 通常のURL（https://... など）が紛れていても querySelector に渡してエラーにならないようにする。
+            var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'))
+                .filter(function (a) {
+                    var href = a.getAttribute('href') || '';
+                    return href.charAt(0) === '#' && href.length > 1;
+                });
+            var sections = links.map(function (a) {
+                return document.querySelector(a.getAttribute('href'));
+            });
+
+            // 「TOCのすぐ下のライン」を、どのセクションの見出しが最後に通過したかで
+            // アクティブなセクションを判定する。
+            // （画面中央の帯との交差判定だと、「はじめに」のように中身が短いセクションが
+            //   一度も帯に重ならないまま通り過ぎてしまい、正しく判定できないため）
+            //
+            // 基準線の値は report.css の scroll-margin-top と揃えておくこと。
+            // ここがズレていると、リンククリックで着地した直後に「まだ基準線を
+            // 通過していない」と判定され、ハイライトが一切更新されなくなる。
+            var SCROLL_OFFSET = 88; // report.css の section[id] / footer[id] の scroll-margin-top と同じ値
+
+            function updateActive() {
+                var refY = SCROLL_OFFSET + 8;
+                var activeIndex = -1;
+                for (var i = 0; i < sections.length; i++) {
+                    var el = sections[i];
+                    if (!el) continue;
+                    if (el.getBoundingClientRect().top <= refY) activeIndex = i;
+                }
+                // まだどのセクションにも到達していない（ヒーローを見ている）間は先頭を表示
+                if (activeIndex === -1) activeIndex = 0;
+
+                links.forEach(function (a) { a.classList.remove('active'); });
+                if (links[activeIndex]) links[activeIndex].classList.add('active');
+            }
+
+            var ticking = false;
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () {
+                    updateActive();
+                    ticking = false;
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateActive();
+        })();
+    </script>
+</body>
+
+</html>
