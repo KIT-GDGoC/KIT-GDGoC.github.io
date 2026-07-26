@@ -33,36 +33,15 @@ GDGoC KIT（Google Developer Groups on Campus KIT / GDG on Campus Kanazawa Insti
 
 ## レポートの追加方法
 
-1. `report/` に `YYYYMMDD.html` を新規作成（YYYYMMDDはイベントの実施日）
-   - 同日に複数イベントがある場合は `YYYYMMDD-2.html` のように連番を付ける
-2. `report/_template.html` をコピーして中身を書き換える
-3. 記事冒頭に実施日と公開日を記載する
-
-    ```html
-    <p>実施日: 2026年4月21日 / 公開日: 2026年4月27日</p>
-    ```
-
-4. 写真は `assets/images/YYYYMMDD/` に入れて、記事から相対パスで参照する
-5. `report/index.html` にレポートへのリンクを追記する
-6. 変更をコミット・プッシュ（GitHub Pagesが自動で反映）
+[docs/about_pages.md](docs/about_pages.md) を参照してください。
 
 ### レポートの構成（テンプレートの型）
 
-過去のnoteでの投稿を踏まえた、基本の章立てです。
-
-- **はじめに**: イベント概要、開催日、対象者、参加人数、connpassなどのイベント詳細リンク
-- **セッション**: 登壇者名・所属を明記しつつ、①②③...と連番で紹介
-- **おまけ**: 名言などで締めくくる（任意）
-- **関連リンク**: 参加者・登壇者が書いたnote/ブログ/SNS投稿など
-- **本イベントについて**: 主催団体情報、公式X（[@kit_gdsc](https://x.com/kit_gdsc)）、公式サイト、会場情報、登壇資料、ハッシュタグ
-
-個別レポートページには目次（TOC）機能があり、スクロールに応じて現在地がハイライトされます。セクション（`h2`）を増減した場合は、ヒーロー直下の`<nav class="toc">`のリンクも合わせて増減してください。
+[docs/about_pages.md](docs/about_pages.md) の `_template.html` を参照してください。
 
 ## 写真掲載について
 
-- 参加者・登壇者が写っている写真を載せる場合は、事前に本人の確認を取る
-- 個人情報（氏名、連絡先など）を記事や画像ファイルに含めない
-- 写真には `© GDGoC KIT` のクレジットを添える
+[docs/about_pages.md](docs/about_pages.md) の「写真掲載について」を参照してください。
 
 ## ブランチ運用ルール
 
