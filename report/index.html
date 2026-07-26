@@ -11,17 +11,25 @@
   レポート一覧ページ（report/index.html）
   ============================================================
   使い方:
-  1. 新しいレポートを作ったら、"EDIT: ここから" 〜 "EDIT: ここまで"
-    の <li class="report-card"> ブロックをコピーして、リストの一番上に追加する
-        （新しい日付が上に来るように並べる）
-        2. href は report/ 配下のファイル名（例: 20260421.html）に合わせる
-        3. 色は自動でローテーションするので気にしなくてよい
+  1. 新しいレポートを作ったら、このHTMLは編集しない。
+     代わりに assets/data/reports.json に1件分のエントリを追加する。
+     （date / href / title / excerpt の4つ）
+     例:
+     {
+       "date": "20260509",
+       "href": "20260509.html",
+       "title": "イベント名を入れる",
+       "excerpt": "イベントの概要を1〜2文で入れる。"
+     }
+  2. 並び順はJS側でdateの新しい順に自動ソートされるので、
+     JSON内での追加位置は気にしなくてよい（配列の末尾に足せばよい）
+  3. カード上部の4色ラインも自動でローテーションする（HTML/CSS側は変更不要）
 
-        スタイルは共通CSS（assets/css/）を読み込んでいる。
-        デザインを変えたいときは assets/css/base.css（全ページ共通）
-        または assets/css/report-list.css（このページ専用）を編集する。
-        ============================================================
-        -->
+  スタイルは共通CSS（assets/css/）を読み込んでいる。
+  デザインを変えたいときは assets/css/base.css（全ページ共通）
+  または assets/css/report-list.css（このページ専用）を編集する。
+  ============================================================
+-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
@@ -45,26 +53,76 @@
             <p>GDGoC KIT が開催・共催したイベントのレポートをまとめています。</p>
         </header>
 
-        <ul class="report-list">
+        <!-- assets/data/reports.json の内容をJSで読み込んで、ここに<li>を生成する -->
+        <ul class="report-list" id="report-list"></ul>
 
-            <!-- EDIT: ここから（新しいレポートはこのブロックをコピーしてリストの先頭に追加） -->
-            <li>
-                <div class="report-card">
-                    <a href="20260421.html">
-                        <span class="date">2026.04.21</span>
-                        <h2>KIT Welcome Event 2026 ～エンジニアのはじめかた × Cloud体験〜</h2>
-                        <p class="excerpt">
-                            新入生・新メンバー向けに、エンジニアとしての第一歩とCloudの基礎を体験してもらうイベントを開催しました。
-                        </p>
-                        <span class="read-more">続きを読む →</span>
-                    </a>
-                </div>
-            </li>
-            <!-- EDIT: ここまで -->
-
-        </ul>
+        <p id="report-list-empty" class="report-list-empty" hidden>
+            まだレポートがありません。
+        </p>
 
     </div>
+
+    <script>
+        (function () {
+            var list = document.getElementById('report-list');
+            var emptyMessage = document.getElementById('report-list-empty');
+
+            fetch('../assets/data/reports.json')
+                .then(function (res) {
+                    if (!res.ok) throw new Error('reports.json の取得に失敗しました');
+                    return res.json();
+                })
+                .then(function (reports) {
+                    if (!Array.isArray(reports) || reports.length === 0) {
+                        emptyMessage.hidden = false;
+                        return;
+                    }
+
+                    // date（YYYY-MM-DD）の新しい順に並び替える。JSON内の記載順は問わない。
+                    reports.sort(function (a, b) {
+                        return String(b.date).localeCompare(String(a.date));
+                    });
+
+                    reports.forEach(function (report) {
+                        var li = document.createElement('li');
+
+                        var card = document.createElement('div');
+                        card.className = 'report-card';
+
+                        var a = document.createElement('a');
+                        a.href = report.href;
+
+                        var dateSpan = document.createElement('span');
+                        dateSpan.className = 'date';
+                        dateSpan.textContent = String(report.date).replace(/-/g, '.');
+
+                        var h2 = document.createElement('h2');
+                        h2.textContent = report.title;
+
+                        var excerpt = document.createElement('p');
+                        excerpt.className = 'excerpt';
+                        excerpt.textContent = report.excerpt;
+
+                        var readMore = document.createElement('span');
+                        readMore.className = 'read-more';
+                        readMore.textContent = '続きを読む →';
+
+                        a.appendChild(dateSpan);
+                        a.appendChild(h2);
+                        a.appendChild(excerpt);
+                        a.appendChild(readMore);
+                        card.appendChild(a);
+                        li.appendChild(card);
+                        list.appendChild(li);
+                    });
+                })
+                .catch(function (err) {
+                    emptyMessage.hidden = false;
+                    emptyMessage.textContent = 'レポート一覧の読み込みに失敗しました。';
+                    console.error(err);
+                });
+        })();
+    </script>
 </body>
 
 </html>
