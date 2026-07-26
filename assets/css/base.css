@@ -1,4 +1,3 @@
-/* 全ページ共通（変数・リセット・チャプターバーなど）*/
 /* ============================================================
    GDGoC KIT サイト共通ベーススタイル
    ============================================================
@@ -125,6 +124,22 @@ img {
 
 .chapter-bar .name b {
     color: var(--g-blue);
+}
+
+/* ブランドガイドに沿ったチャプターロゴ画像（<> GDGoC KIT） */
+.chapter-bar .logo {
+    height: 28px;
+    width: auto;
+    display: block;
+    border-radius: 0;
+    /* ロゴ画像には角丸を付けない */
+}
+
+/* ロゴをリンクにした場合、下線や余分な行間が出ないようにする */
+.chapter-bar .logo-link {
+    display: inline-flex;
+    line-height: 0;
+    text-decoration: none;
 }
 
 .chapter-bar .back {
