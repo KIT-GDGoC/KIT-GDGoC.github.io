@@ -154,6 +154,25 @@ img {
     color: var(--g-blue);
 }
 
+/* トップページなど、複数ページへのリンクをまとめて出したいときのナビ */
+.chapter-bar .site-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chapter-bar .site-nav a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+}
+
+.chapter-bar .site-nav a:hover {
+    color: var(--g-blue);
+}
+
 /* ---------- ページ見出し共通（eyebrow + h1） ---------- */
 .eyebrow {
     font-family: var(--font-mono);
