@@ -24,6 +24,8 @@
   2. 並び順はJS側でdateの新しい順に自動ソートされるので、
      JSON内での追加位置は気にしなくてよい（配列の末尾に足せばよい）
   3. カード上部の4色ラインも自動でローテーションする（HTML/CSS側は変更不要）
+  4. 年ごとのグループ分け・クイックナビ（年が2つ以上あるときだけ表示）も
+     JS側でdateの年から自動生成される（HTML/CSS側は変更不要）
 
   スタイルは共通CSS（assets/css/）を読み込んでいる。
   デザインを変えたいときは assets/css/base.css（全ページ共通）
@@ -53,8 +55,11 @@
             <p>GDGoC KIT が開催・共催したイベントのレポートをまとめています。</p>
         </header>
 
-        <!-- assets/data/reports.json の内容をJSで読み込んで、ここに<li>を生成する -->
-        <ul class="report-list" id="report-list"></ul>
+        <!-- 年クイックナビ。年が2つ以上あるときだけJS側でhiddenが外れて表示される -->
+        <nav class="year-nav" id="year-nav" aria-label="年で絞り込む" hidden></nav>
+
+        <!-- assets/data/reports.json の内容をJSで読み込んで、年ごとの<section>を生成する -->
+        <div id="report-groups"></div>
 
         <p id="report-list-empty" class="report-list-empty" hidden>
             まだレポートがありません。
