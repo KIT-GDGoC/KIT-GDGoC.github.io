@@ -4,32 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベントレポート一覧 | GDGoC KIT</title>
+    <title>イベント情報 | GDGoC KIT</title>
 
     <!--
   ============================================================
-  レポート一覧ページ（report/index.html）
+  イベント情報ページ（event/index.html）
   ============================================================
   使い方:
-  1. 新しいレポートを作ったら、このHTMLは編集しない。
-     代わりに assets/data/reports.json に1件分のエントリを追加する。
-     （date / href / title / excerpt の4つ）
-     例:
-     {
-       "date": "20260509",
-       "href": "20260509.html",
-       "title": "イベント名を入れる",
-       "excerpt": "イベントの概要を1〜2文で入れる。"
-     }
-  2. 並び順はJS側でdateの新しい順に自動ソートされるので、
-     JSON内での追加位置は気にしなくてよい（配列の末尾に足せばよい）
-  3. カード上部の4色ラインも自動でローテーションする（HTML/CSS側は変更不要）
-  4. 年ごとのグループ分け・クイックナビ（年が2つ以上あるときだけ表示）も
-     JS側でdateの年から自動生成される（HTML/CSS側は変更不要）
+  1. 新しいイベントを追加したら、このHTMLは編集しない。
+     代わりに assets/data/events.json に1件分のエントリを追加する。
+     （title / start / end / venue / excerpt / href / reportHref）
+  2. 終了しているかどうかは end（無ければstart）と現在時刻を
+     JS側で比較し、「予定しているイベント」「終了したイベント」に
+     自動で振り分けて描画する（HTML/CSS側は変更不要）
+  3. 終了したイベントは reportHref があればイベントレポートへのリンクに、
+     無ければ「レポート作成中」バッジが表示される
 
   スタイルは共通CSS（assets/css/）を読み込んでいる。
   デザインを変えたいときは assets/css/base.css（全ページ共通）
-  または assets/css/report-list.css（このページ専用）を編集する。
+  または assets/css/event-list.css（このページ専用）を編集する。
   ============================================================
 -->
 
@@ -38,7 +31,7 @@
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/report-list.css">
+    <link rel="stylesheet" href="../assets/css/event-list.css">
 </head>
 
 <body>
@@ -50,24 +43,31 @@
         </div>
 
         <header class="page-head">
-            <p class="eyebrow">EVENT REPORTS</p>
-            <h1>イベントレポート一覧</h1>
-            <p>GDGoC KIT が開催・共催したイベントのレポートをまとめています。</p>
+            <p class="eyebrow">EVENTS</p>
+            <h1>イベント情報</h1>
+            <p>GDGoC KIT が開催・共催するイベントの情報です。終了したイベントは、公開され次第イベントレポートからも振り返れます。</p>
         </header>
 
-        <!-- 年クイックナビ。年が2つ以上あるときだけJS側でhiddenが外れて表示される -->
-        <nav class="year-nav" id="year-nav" aria-label="年で絞り込む" hidden></nav>
+        <!-- assets/data/events.json の内容をJSで読み込んで、ここに<li>を生成する -->
+        <section class="event-section">
+            <h2>予定しているイベント</h2>
+            <ul class="event-list" id="upcoming-list"></ul>
+            <p id="upcoming-empty" class="event-list-empty" hidden>
+                現在予定しているイベントはありません。
+            </p>
+        </section>
 
-        <!-- assets/data/reports.json の内容をJSで読み込んで、年ごとの<section>を生成する -->
-        <div id="report-groups"></div>
-
-        <p id="report-list-empty" class="report-list-empty" hidden>
-            まだレポートがありません。
-        </p>
+        <section class="event-section is-ended">
+            <h2>終了したイベント</h2>
+            <ul class="event-list" id="ended-list"></ul>
+            <p id="ended-empty" class="event-list-empty" hidden>
+                終了したイベントはまだありません。
+            </p>
+        </section>
 
     </div>
 
-    <script src="../assets/js/report-list.js"></script>
+    <script src="../assets/js/event-list.js"></script>
 </body>
 
 </html>
