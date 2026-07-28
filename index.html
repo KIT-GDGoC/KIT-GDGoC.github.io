@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDGoC KIT</title>
+
+    <meta name="description"
+        content="GDGoC KITは、金沢工業大学の学生で構成される北陸唯一のGDGoC（Google Developer Groups on Campus）チャプターです。イベントレポートや参加案内をまとめています。">
+    <meta name="keywords" content="GDGoC KIT, GDG on Campus, 金沢工業大学, 学生コミュニティ, イベント">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="GDGoC KIT">
+    <meta property="og:title" content="GDGoC KIT">
+    <meta property="og:description"
+        content="GDGoC KITは、金沢工業大学の学生で構成される北陸唯一のGDGoC（Google Developer Groups on Campus）チャプターです。">
+    <meta property="og:url" content="https://kit-gdgoc.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kit_gdsc">
+
+    <!--
+  ============================================================
+  トップページ（index.html）
+  ============================================================
+  最新レポート・予定イベントは assets/data/reports.json と
+  assets/data/events.json から自動でプレビュー表示される。
+  このHTMLを直接編集する必要はない。
+
+  FAQ・公式リンクの内容だけ、下の "EDIT: ..." を
+    実際の内容に書き換える。
+
+    スタイルは base.css / report-list.css / event-list.css / top.css
+    を読み込んでいる（レポート・イベントカードのスタイルを再利用しているため）。
+    ============================================================
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/report-list.css">
+    <link rel="stylesheet" href="assets/css/event-list.css">
+    <link rel="stylesheet" href="assets/css/top.css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="chapter-bar">
+            <img class="logo" src="assets/images/branding/logo.png" alt="GDGoC KIT">
+            <nav class="site-nav">
+                <a href="about/index.html">About</a>
+                <a href="report/index.html">Reports</a>
+                <a href="event/index.html">Events</a>
+            </nav>
+        </div>
+
+        <header class="hero">
+            <h1>北陸で、Googleの技術を学ぼう。</h1>
+            <p class="lead">
+                GDGoC KITは、金沢工業大学の学生で構成される北陸唯一のGDGoC（Google Developer Groups on
+                Campus）チャプターです。ハンズオン・LT会・合同イベントなどを通じて、学びを共有しています。
+            </p>
+            <div class="hero-cta">
+                <!-- EDIT: 実際の申し込み先（connpassグループページやDiscordなど）に差し替える -->
+                <a class="primary" href="https://connpass.com/" target="_blank" rel="noopener">イベントに参加する</a>
+                <a class="secondary" href="about/index.html">GDGoC KITについて</a>
+            </div>
+        </header>
+
+        <!-- ================= 最新レポート ================= -->
+        <section class="top-section">
+            <div class="section-head">
+                <h2>最新のレポート</h2>
+                <a class="more" href="report/index.html">すべて見る →</a>
+            </div>
+            <ul class="report-list" id="top-report-list"></ul>
+            <p id="top-report-empty" class="top-list-empty" hidden>まだレポートがありません。</p>
+        </section>
+
+        <!-- ================= 予定イベント ================= -->
+        <section class="top-section">
+            <div class="section-head">
+                <h2>予定しているイベント</h2>
+                <a class="more" href="event/index.html">すべて見る →</a>
+            </div>
+            <ul class="event-list" id="top-event-list"></ul>
+            <p id="top-event-empty" class="top-list-empty" hidden>現在、予定しているイベントはありません。</p>
+        </section>
+
+        <!-- ================= FAQ ================= -->
+        <section class="top-section">
+            <div class="section-head">
+                <h2>よくある質問</h2>
+            </div>
+            <div class="faq-list">
+                <!-- EDIT: 実際の内容に差し替える。details/summaryなのでJS不要で開閉する -->
+                <details class="faq-item">
+                    <summary>GDGoC KITとは何をしている団体ですか？</summary>
+                    <p>Googleの技術に興味がある金沢工業大学の学生が集まり、ハンズオンやLT会、他大学との合同イベントなどを開催しているコミュニティです。詳しくは「About」ページをご覧ください。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>プログラミング経験がなくても参加できますか？</summary>
+                    <p>問題ありません。初心者向けのハンズオンやLT会も定期的に開催しています。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>参加費はかかりますか？</summary>
+                    <p><!-- EDIT: 実際の情報に差し替える -->基本的に無料です。イベントによって異なる場合があるので、各イベントの案内ページをご確認ください。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>どうやって参加すればいいですか？</summary>
+                    <p><!-- EDIT: 実際の情報に差し替える -->各イベントのconnpassページから申し込むか、公式Xをフォローして最新情報をチェックしてください。</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ================= 公式SNS・リンク ================= -->
+        <section class="top-section">
+            <div class="section-head">
+                <h2>公式SNS・リンク</h2>
+            </div>
+            <div class="link-grid">
+                <a href="https://x.com/kit_gdsc" target="_blank" rel="noopener">
+                    <span class="ll-label">公式X（旧Twitter）</span>
+                    <span class="ll-arrow">→</span>
+                </a>
+                <a href="https://gdg.community.dev/gdg-on-campus-kanazawa-institute-of-technology-ishikawa-japan/"
+                    target="_blank" rel="noopener">
+                    <span class="ll-label">公式サイト（gdg.community.dev）</span>
+                    <span class="ll-arrow">→</span>
+                </a>
+                <!-- EDIT: Discordなど他のリンクがあれば追加する -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="assets/js/top.js"></script>
+</body>
+
+</html>
