@@ -1,0 +1,225 @@
+/* ============================================================
+   トップページ（index.html）専用スタイル
+   ============================================================
+   base.css / report-list.css / event-list.css を先に読み込んだ
+   上で使用する（レポート・イベントのカードはそれぞれのスタイルを
+   再利用している）。
+   ============================================================ */
+
+:root {
+    --measure: 860px;
+}
+
+/* ---------- ヒーロー ---------- */
+header.hero {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 56px 40px;
+    margin-bottom: 64px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+}
+
+header.hero h1 {
+    font-size: clamp(26px, 4.2vw, 36px);
+    margin: 0 0 16px;
+}
+
+header.hero p.lead {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto 32px;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-cta a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+}
+
+.hero-cta a.primary {
+    background: var(--g-blue);
+    color: #fff;
+}
+
+.hero-cta a.primary:hover {
+    background: #1a56c4;
+}
+
+.hero-cta a.secondary {
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.hero-cta a.secondary:hover {
+    background: #eef0f2;
+}
+
+/* ---------- セクション共通 ---------- */
+.top-section {
+    margin: 64px 0;
+}
+
+.top-section .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.top-section .section-head h2 {
+    font-family: var(--font-jp);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.top-section .section-head h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--g-blue);
+    flex: none;
+}
+
+.top-section:nth-of-type(4n+2) .section-head h2::before {
+    background: var(--g-red);
+}
+
+.top-section:nth-of-type(4n+3) .section-head h2::before {
+    background: var(--g-yellow);
+}
+
+.top-section:nth-of-type(4n+4) .section-head h2::before {
+    background: var(--g-green);
+}
+
+.top-section .section-head a.more {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--g-blue);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.top-list-empty {
+    color: var(--ink-soft);
+    font-size: 14px;
+    text-align: center;
+    padding: 24px 0;
+    background: var(--card);
+    border-radius: var(--radius);
+}
+
+/* ---------- FAQ ---------- */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--g-blue);
+    flex: none;
+    transition: transform .15s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    margin: 0;
+    padding: 0 24px 20px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* ---------- 公式リンク／申し込み ---------- */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.link-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 22px;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+    transition: box-shadow .15s, transform .15s;
+}
+
+.link-grid a:hover {
+    box-shadow: 0 2px 4px rgba(60, 64, 67, .1), 0 4px 10px rgba(60, 64, 67, .08);
+    transform: translateY(-1px);
+}
+
+.link-grid .ll-label {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 14px;
+}
+
+.link-grid .ll-arrow {
+    color: var(--g-blue);
+}
+
+@media (max-width: 480px) {
+    header.hero {
+        padding: 40px 24px;
+    }
+
+    .top-section .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
