@@ -18,6 +18,74 @@ header.page-head p {
     font-size: 15px;
 }
 
+/* ---------- 年クイックナビ ---------- */
+.year-nav {
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    background: rgba(255, 255, 255, .9);
+    backdrop-filter: blur(6px);
+    border-radius: 100px;
+    padding: 6px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+    scrollbar-width: none;
+}
+
+.year-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.year-nav a {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+}
+
+.year-nav a:hover {
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.year-nav a.active {
+    background: var(--g-blue);
+    color: #fff;
+}
+
+/* ---------- 年グループ見出し ---------- */
+.year-group {
+    scroll-margin-top: 72px;
+    /* .year-nav の高さ分の余白（クリックで着地したとき隠れないように） */
+    margin-bottom: 48px;
+}
+
+.year-group h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.year-group h2 .count {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
 .report-list {
     list-style: none;
     margin: 0;
@@ -115,6 +183,10 @@ header.page-head p {
 }
 
 @media (max-width: 480px) {
+    .year-nav {
+        top: 8px;
+    }
+
     .report-card a {
         padding: 22px 20px 20px;
     }
