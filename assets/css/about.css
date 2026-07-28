@@ -1,0 +1,118 @@
+/* ============================================================
+   About ページ（about/index.html）専用スタイル
+   ============================================================
+   base.css を先に読み込んだ上で使用する。
+   ============================================================ */
+
+:root {
+    --measure: 720px;
+}
+
+header.hero {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 40px 36px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+}
+
+header.hero p.lead {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 16px 0 0;
+}
+
+section {
+    margin: 56px 0;
+}
+
+section>h2 {
+    font-family: var(--font-jp);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+section>h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--g-blue);
+    flex: none;
+}
+
+section:nth-of-type(4n+1)>h2::before {
+    background: var(--g-blue);
+}
+
+section:nth-of-type(4n+2)>h2::before {
+    background: var(--g-red);
+}
+
+section:nth-of-type(4n+3)>h2::before {
+    background: var(--g-yellow);
+}
+
+section:nth-of-type(4n+4)>h2::before {
+    background: var(--g-green);
+}
+
+section>h3 {
+    font-family: var(--font-jp);
+    font-weight: 700;
+    font-size: 17px;
+    margin: 28px 0 8px;
+}
+
+section p {
+    margin: 0 0 1.2em;
+}
+
+/* ---------- 公式リンクカード ---------- */
+.info-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 6px rgba(60, 64, 67, .06);
+    transition: box-shadow .15s, transform .15s;
+}
+
+.info-links a:hover {
+    box-shadow: 0 2px 4px rgba(60, 64, 67, .1), 0 4px 10px rgba(60, 64, 67, .08);
+    transform: translateY(-1px);
+}
+
+.info-links .il-label {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+}
+
+.info-links .il-arrow {
+    color: var(--g-blue);
+    font-size: 16px;
+}
+
+@media (max-width: 480px) {
+    header.hero {
+        padding: 28px 22px;
+    }
+}
