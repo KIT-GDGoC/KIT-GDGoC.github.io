@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベントレポート一覧 | GDGoC KIT</title>
+
+    <!--
+  ============================================================
+  レポート一覧ページ（report/index.html）
+  ============================================================
+  使い方:
+  1. 新しいレポートを作ったら、このHTMLは編集しない。
+     代わりに assets/data/reports.json に1件分のエントリを追加する。
+     （date / href / title / excerpt の4つ）
+     例:
+     {
+       "date": "20260509",
+       "href": "20260509.html",
+       "title": "イベント名を入れる",
+       "excerpt": "イベントの概要を1〜2文で入れる。"
+     }
+  2. 並び順はJS側でdateの新しい順に自動ソートされるので、
+     JSON内での追加位置は気にしなくてよい（配列の末尾に足せばよい）
+  3. カード上部の4色ラインも自動でローテーションする（HTML/CSS側は変更不要）
+  4. 年ごとのグループ分け・クイックナビ（年が2つ以上あるときだけ表示）も
+     JS側でdateの年から自動生成される（HTML/CSS側は変更不要）
+
+  スタイルは共通CSS（assets/css/）を読み込んでいる。
+  デザインを変えたいときは assets/css/base.css（全ページ共通）
+  または assets/css/report-list.css（このページ専用）を編集する。
+  ============================================================
+-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/report-list.css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="chapter-bar">
+            <img class="logo" src="../assets/images/branding/logo.png" alt="GDGoC KIT">
+            <a class="back" href="../index.html">← トップページ</a>
+        </div>
+
+        <header class="page-head">
+            <p class="eyebrow">EVENT REPORTS</p>
+            <h1>イベントレポート一覧</h1>
+            <p>GDGoC KIT が開催・共催したイベントのレポートをまとめています。</p>
+        </header>
+
+        <!-- 年クイックナビ。年が2つ以上あるときだけJS側でhiddenが外れて表示される -->
+        <nav class="year-nav" id="year-nav" aria-label="年で絞り込む" hidden></nav>
+
+        <!-- assets/data/reports.json の内容をJSで読み込んで、年ごとの<section>を生成する -->
+        <div id="report-groups"></div>
+
+        <p id="report-list-empty" class="report-list-empty" hidden>
+            まだレポートがありません。
+        </p>
+
+    </div>
+
+    <script src="../assets/js/report-list.js"></script>
+</body>
+
+</html>
