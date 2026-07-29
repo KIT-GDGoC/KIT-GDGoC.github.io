@@ -1,0 +1,37 @@
+name: Generate RSS feed
+
+# reports.json / events.json が更新されたら feed.xml を自動生成してコミットする。
+# 手動実行（workflow_dispatch）もできる。
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - "assets/data/reports.json"
+            - "assets/data/events.json"
+            - "scripts/generate-feed.js"
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    build-feed:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Generate feed.xml
+              run: node scripts/generate-feed.js
+
+            - name: Commit feed.xml if changed
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: "chore: update feed.xml"
+                  file_pattern: feed.xml
